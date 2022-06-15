@@ -33,7 +33,7 @@ for Archivo in path: #para cada dentro del directorio
         except:
             Archivo_Nuevo.close()
             os.remove(Archivo_Nuevo)
-            Archivo_Lista=open(Archivos[4]+"\\"+'ArchivosNoCopiados', 'w')
+            Archivo_Lista=open(Archivos[4]+"\\"+'ArchivosNoCopiados.txt', 'w')
             Archivo_Lista.write('No pude abrir los siguientes archivos:')
             for linea in Archivo_Lista:
                 Archivo_Lista.write(Archivo) 
