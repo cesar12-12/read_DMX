@@ -10,7 +10,6 @@ Archivos=sys.argv #Lista con los argumentos (archivos)
 path=os.listdir(Archivos[1])
 Cambio_palabra=Archivos[2]
 Nueva_palabra=Archivos[3]
-Nombre_Lista=Archivos[5]
 
 if os.path.exists(Archivos[4]) is False:
     Dir_name=os.mkdir(Archivos[4])
@@ -34,7 +33,7 @@ for Archivo in path: #para cada dentro del directorio
         except:
             Archivo_Nuevo.close()
             os.remove(Archivo_Nuevo)
-            Archivo_Lista=open(Archivos[4]+"\\"+Nombre_Lista, 'w')
+            Archivo_Lista=open(Archivos[4]+"\\"+'ArchivosNoCopiados', 'w')
             Archivo_Lista.write('No pude abrir los siguientes archivos:')
             for linea in Archivo_Lista:
                 Archivo_Lista.write(Archivo) 
