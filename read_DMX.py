@@ -1,6 +1,6 @@
 import sys
 import os 
-from tkinter import N
+#from tkinter import N
 
 
 #python3 prog.py /path Cambio NewWord New_dir_name
@@ -17,10 +17,10 @@ else:
     pass
 
 for Archivo in path: #para cada dentro del directorio
-    if os.path.isfile(Archivos[1]+"\\"+Archivo) is True:
-        Archivo_original=open(Archivos[1]+"\\"+Archivo,'r')
+    if os.path.isfile(Archivos[1]+"/"+Archivo) is True:
+        Archivo_original=open(Archivos[1]+"/"+Archivo,'r')
         #print('Abri el archivo: '+Archivo)
-        Archivo_Nuevo=open(Archivos[4]+"\\"+Archivo.replace(Cambio_palabra, Nueva_palabra),'w')
+        Archivo_Nuevo=open(Archivos[4]+"/"+Archivo.replace(Cambio_palabra, Nueva_palabra),'w')
         #print('Cree el archivo: '+Archivo.replace(Cambio_palabra, Nueva_palabra))
         try:
             for linea in Archivo_original: #para cada linea de Archivo
@@ -32,11 +32,10 @@ for Archivo in path: #para cada dentro del directorio
             Archivo_Nuevo.close()
         except:
             Archivo_Nuevo.close()
-            os.remove(Archivo_Nuevo)
-            Archivo_Lista=open(Archivos[4]+"\\"+'ArchivosNoCopiados.txt', 'w')
-            Archivo_Lista.write('No pude abrir los siguientes archivos:')
-            for linea in Archivo_Lista:
-                Archivo_Lista.write(Archivo) 
+            os.remove(Archivos[4]+'/'+Archivo.replace(Cambio_palabra, Nueva_palabra))
+            Archivo_Lista=open(Archivos[4]+"/"+'ArchivosNoCopiados.txt', 'a')
+            Archivo_Lista.write('No pude abrir los siguientes archivos:\n')
+            Archivo_Lista.write(Archivo+'\n') 
             Archivo_Lista.close()
             #print('No pude abrir el archivo: %s' % Archivo)
         #print('Cerre el archivo ' +Archivo.replace(Cambio_palabra, Nueva_palabra))
