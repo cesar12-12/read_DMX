@@ -32,7 +32,7 @@ for Archivo in path: #para cada dentro del directorio
             Archivo_Nuevo.close()
         except:
             Archivo_Nuevo.close()
-            os.remove(Archivo_Nuevo)
+            os.remove(Archivo.replace(Cambio_palabra, Nueva_palabra))
             Archivo_Lista=open(Archivos[4]+"\\"+'ArchivosNoCopiados.txt', 'w')
             Archivo_Lista.write('No pude abrir los siguientes archivos:')
             for linea in Archivo_Lista:
